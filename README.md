@@ -11,7 +11,14 @@
 
 [fine-tuned model](https://drive.google.com/file/d/1LC80U5Gck6PCicdqyd2s5KDUgD4EEq1Q/view?usp=sharing)
 
+## Preprocessing: 
 
+Each dialogue turn will be represented as a sequence, which contains previous user/system turns, dialog act, knowledge(None), and response
+
+```
+[context][user]你觉得血色身材这部电影好看吗？[system]我觉得简直是太精彩了，[user]是吗？[system]就要讲述的故事，一环扣一环，剧情特别的惊心动魄，[user]是不是给人一种特别的紧张感？[system]简直你说的太实在了，[user]是吧，我觉得这部电影算是精品吧，[system]我觉得是精品中的精品，[user]怎么你对这部片儿的评价很高呀？[system]是啊，因为我喜欢看这一种嘛，简直是太好看了，[endofcontext][action][endofaction][knowledge][endofknowledge]
+[response]行，那以后我要是有这种电影的话，我还推荐给你[endofresponse]
+```
 
 ## Usage
 unzip ul_model_best.zip
@@ -65,3 +72,7 @@ python ./train_ul_best.py --epochs 8 --batch_size 64 --pretrained_model ./pretra
   year={2020}
 } 
 ```
+
+## Thanks 
+GPT2-chitchat(https://github.com/yangjianxin1/GPT2-chitchat)
+CDial-GPT(https://github.com/thu-coai/CDial-GPT)
